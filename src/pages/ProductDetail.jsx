@@ -12,15 +12,15 @@ export default function ProductDetail() {
   useEffect(() => {
     let productService = new ProductService()
     productService.getByProductName(name).then(result => setProduct(result.data.data))
-  }, [name])
-
+  }, [])
+ 
 
   return (
     <div>
       <Card.Group>
         <Card fluid>
           <Card.Content>
-            <Image floated='right' size='mini' src='/images/avatar/large/steve.jpg'/>
+            <Image floated='right' size='mini' src='/images/avatar/large/steve.jpg' />
             <Card.Header>{product.productName}</Card.Header>
             <Card.Meta>Laptop</Card.Meta>
             <Card.Description></Card.Description>

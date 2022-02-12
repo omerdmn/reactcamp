@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import CartSummary from "./CartSummary";
 import { Container, Menu } from "semantic-ui-react";
 import SignedOut from "./SignedOut";
 import SignedIn from "./SignedIn";
 import { useHistory } from "react-router";
+import CartSummary from "./CartSummary"
 
 
 export default function Navi() {
@@ -23,12 +23,12 @@ export default function Navi() {
     <div>
       <Menu inverted fixed="top">
         <Container>
-          <Menu.Item name="home" />
-          <Menu.Item name="messages" />
-
+          <Menu.Item name="anasayfa" />
+          <Menu.Item name="mesaj" />
           <Menu.Menu position="right">
-            
             {isAuthenticated ? <SignedIn signOut={handleSignOut} bisey="1" /> : <SignedOut signIn={handleSignIn} />}
+            <CartSummary />
+
           </Menu.Menu>
         </Container>
       </Menu>

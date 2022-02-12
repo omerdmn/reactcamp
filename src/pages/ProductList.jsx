@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {  Icon, Menu, Table } from "semantic-ui-react";
+import { Icon, Menu, Table } from "semantic-ui-react";
 import ProductService from "../services/productService";
-
-
-
 
 export default function ProductList() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     let productService = new ProductService();
-    productService.getProducts() .then((result) => setProducts(result.data.data));
+    productService.getProducts().then((result) => setProducts(result.data.data));
   }, []);
 
- 
+
   return (
     <div>
       <Table celled>

@@ -1,6 +1,6 @@
 import React from 'react'
 import {  NavLink } from 'react-router-dom';
-import { Dropdown,Label } from "semantic-ui-react";
+import { Dropdown} from "semantic-ui-react";
 
 
 
@@ -10,8 +10,8 @@ export default function CartSummary() {
         <div>
             <Dropdown item text="Sepetiniz">
               <Dropdown.Menu>
-                <Dropdown.item>Acer laptop</Dropdown.item>
-                <Dropdown.item>Asus laptop</Dropdown.item>
+              <Dropdown.Item>Asus laptop</Dropdown.Item>
+              <Dropdown.Item>Ekran kartı</Dropdown.Item>
                 <Dropdown.Divider/>
                 <Dropdown.Item as={NavLink} to="/cart">Sepete git</Dropdown.Item>
               </Dropdown.Menu>

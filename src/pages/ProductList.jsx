@@ -1,28 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button, Icon, Menu, Table } from "semantic-ui-react";
+import {  Icon, Menu, Table } from "semantic-ui-react";
 import ProductService from "../services/productService";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../store/actions/cartActions";
-import { toast } from "react-toastify";
+
+
+
 
 export default function ProductList() {
-  const dispatch = useDispatch();
-
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     let productService = new ProductService();
-    productService
-      .getProducts()
-      .then((result) => setProducts(result.data.data));
+    productService.getProducts() .then((result) => setProducts(result.data.data));
   }, []);
 
-  const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
-    toast.success(`${product.productName} sepete eklendi!`)
-  };
-
+ 
   return (
     <div>
       <Table celled>
@@ -40,17 +32,12 @@ export default function ProductList() {
           {products.map((product) => (
             <Table.Row key={product.id}>
               <Table.Cell>
-                <Link to={`/products/${product.productName}`}>
-                  {product.productName}
-                </Link>
+                <Link to={`/products/${product.productName}`}>{product.productName}</Link>
               </Table.Cell>
               <Table.Cell>{product.unitPrice}</Table.Cell>
               <Table.Cell>{product.unitsInStock}</Table.Cell>
               <Table.Cell>{product.quantityPerUnit}</Table.Cell>
               <Table.Cell>{product.category.categoryName}</Table.Cell>
-              <Table.Cell>
-                <Button onClick={()=>handleAddToCart(product)}>Sepete ekle</Button>
-              </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

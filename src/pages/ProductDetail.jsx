@@ -8,13 +8,19 @@ export default function ProductDetail() {
   let { name } = useParams();
 
   const [product, setProduct] = useState({});
-
+  
   useEffect(() => {
     let productService = new ProductService()
-    productService.getByProductName(name).then(result => setProduct(result.data.data))
-  }, [])
- 
 
+    productService.getByProductName(name).then(result => setProduct(result.data.data))
+
+  }, [])
+  var categoryName;
+  if (product.category !== undefined) {
+   categoryName= product.category.categoryName;
+    
+}
+// console.log(pro);
   return (
     <div>
       <Card.Group>
@@ -22,7 +28,7 @@ export default function ProductDetail() {
           <Card.Content>
             <Image floated='right' size='mini' src='/images/avatar/large/steve.jpg' />
             <Card.Header>{product.productName}</Card.Header>
-            <Card.Meta>Laptop</Card.Meta>
+            <Card.Meta>{categoryName}</Card.Meta>
             <Card.Description></Card.Description>
           </Card.Content>
           <Card.Content extra>

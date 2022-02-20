@@ -1,18 +1,17 @@
-export const AD_TO_CARD = "AD_TO_CARD"
-export const REMOVE_FROM_CARD = "REMOVE_FROM_CARD"
-
+export const ADD_TO_CART = "ADD_TO_CART"
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART"
 
 
 export function addToCart(product) {
     return {
-        type: AD_TO_CARD,
+        type: ADD_TO_CART,
         payload: product
     }
 }
 
 export function removeFromCart(product) {
     return {
-        type: REMOVE_FROM_CARD,
+        type: REMOVE_FROM_CART,
         payload: product
     }
 }

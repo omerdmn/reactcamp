@@ -2,6 +2,65 @@
   text-align: center;
 }
 
-.ui.main.container{
-  margin-top: 5em;
+.main{
+  margin-top: 7em;
+  margin-left: auto;
+  margin-right: auto;
+ width: 95%;
+ 
 }
+
+.products{
+margin-inline-start: 5em;
+}
+.product{
+  margin-left: auto;
+  margin-right: auto;
+ border-style: solid;
+  border-width:2px;
+border-color: darkgrey;
+  float: left;
+  width: 230px;
+  height: 450px;
+  padding: 2px;
+  margin-left: 10px;
+  margin-bottom:10px; 
+
+}
+.productinfo{
+  
+  width:  220px;
+  height: 135px;
+}
+
+.img{
+ 
+  object-fit: cover;
+  object-position: 50% 15%;
+  width: 221px;
+  height: 300px;
+}
+.productName{
+ color: rgb(0, 0, 0);
+width: 220px;
+height: 40px;
+overflow: hidden;
+word-break: break-word;
+}
+.unitPrice{
+  margin-top: 5px;
+  color: rgb(29, 119, 11);
+  margin-top: 5px;
+}
+.categoryName{
+  margin-top: 2px;
+}
+.sepeteEkle{ 
+width: 10em;
+margin-top: 5px;
+margin-left: 40px;
+}
+
+
+
+

@@ -15,20 +15,15 @@ export default function ProductDetail() {
     productService.getByProductName(name).then(result => setProduct(result.data.data))
 
   }, [])
-  var categoryName;
-  if (product.category !== undefined) {
-   categoryName= product.category.categoryName;
-    
-}
-// console.log(pro);
+  
   return (
     <div>
-      <Card.Group>
-        <Card fluid>
-          <Card.Content>
+      <Card.Group  >
+        <Card  fluid>
+          <Card.Content >
             <Image floated='right' size='mini' src='/images/avatar/large/steve.jpg' />
             <Card.Header>{product.productName}</Card.Header>
-            <Card.Meta>{categoryName}</Card.Meta>
+            <Card.Meta>CatagoryName</Card.Meta>
             <Card.Description></Card.Description>
           </Card.Content>
           <Card.Content extra>
